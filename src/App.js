@@ -1,24 +1,39 @@
+import React, { useEffect, useState } from 'react'
 import logo from './logo.svg';
-import './App.css';
+import './Styles/Global.scss';
+import Header from './Components/Header';
+import Login from './Components/Login';
+import AfterLogin from './Components/AfterLogin';
+import ReactDOM from "react-dom/client";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Sheet from './Components/Sheet';
+import PublicStreaks from './Components/PublicStreaks';
+
+
 
 function App() {
+  const [user, setuser] = useState(null);
+  useEffect(() => {
+    userLoggedin();
+  }, [])
+
+  const userLoggedin = () => {
+    if (localStorage.getItem("streaksmailz6527") != null)
+      setuser(localStorage.getItem("streaksmailz6527"));
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<><Header />{
+          user != null ? <AfterLogin /> : <Login />
+        }</>}></Route>
+        <Route path="/striversheet" element={<><Header /><Sheet /></>}></Route>
+        <Route path="/publicstreaks" element={<><Header /><PublicStreaks /></>}></Route>
+      </Routes>
+    </BrowserRouter>
+
+
   );
 }
 

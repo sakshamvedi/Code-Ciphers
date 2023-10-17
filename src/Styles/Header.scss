@@ -1,0 +1,234 @@
+@import url("./Global.scss");
+
+$white: #fff;
+$google-blue: white;
+$button-active-blue: #1669F2;
+$main-black : rgb(13, 17, 23);
+$font : 'Tilt Neon',
+sans-serif;
+$secondary : rgb(101, 76, 244);
+$hover : #232D3F;
+
+body {
+    &::-webkit-scrollbar {
+        width: 2px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: $secondary;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: $hover;
+
+    }
+
+}
+
+.main-container {
+    background-color: rgb(7, 7, 14);
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px;
+    font-family: 'Tilt Neon', sans-serif;
+    position: fixed;
+    top: 0;
+    transition: 0.2s ease-in-out;
+
+
+    left: 0;
+    right: 0;
+
+    @media screen and (max-width: 600px) {
+        height: 50px;
+    }
+
+    &.active {
+        height: 180px;
+        flex-direction: column;
+        align-items: start;
+    }
+
+
+    .nav-box {
+        @media screen and (max-width: 600px) {
+            display: none;
+
+            &.active {
+                display: flex;
+                flex-direction: column;
+                position: fixed;
+                top: 100px;
+                gap: 10px;
+            }
+        }
+
+
+
+        button {
+            border: none;
+            background: transparent;
+            font-family: 'Tilt Neon', sans-serif;
+            font-size: 18px;
+            color: white;
+            margin: 0 10px;
+            cursor: pointer;
+            transition: 0.5s ease-in-out;
+            opacity: 0.7;
+
+            &.active {
+
+                border-bottom: solid 2px $secondary;
+                padding: 5px;
+
+
+
+
+            }
+
+
+            &:last-child {
+                margin-right: 0;
+            }
+
+            &:hover {
+                opacity: 1;
+            }
+        }
+    }
+
+    .logo {
+        @media screen and (max-width: 600px) {
+            position: fixed;
+            top: 30px;
+        }
+
+        div {
+            font-size: 24px;
+            color: white;
+            text-decoration: none;
+            font-family: 'Tilt Neon', sans-serif;
+
+
+
+            &::after {
+                content: " ";
+                display: block;
+                width: 6px;
+                height: 6px;
+                position: relative;
+                left: 50%;
+                top: 20px;
+                border-radius: 50%;
+                background-color: rgb(101, 76, 244);
+
+
+            }
+        }
+    }
+
+    .auth {
+        @media screen and (max-width: 600px) {
+            display: none;
+
+            &.active {
+                flex-direction: column;
+                display: flex;
+                position: fixed;
+                top: 180px;
+            }
+        }
+
+        .google-btn {
+            width: 184px;
+            height: 42px;
+            background-color: $google-blue;
+            border-radius: 2px;
+            border: solid 1px rgb(101, 76, 244);
+            background: transparent;
+
+
+            .google-icon-wrapper {
+                position: absolute;
+
+                width: 40px;
+                height: fit-content;
+                border-radius: 2px;
+                background-color: $white;
+            }
+
+            .google-icon {
+                position: absolute;
+                margin-top: 11px;
+                margin-left: 11px;
+                width: 18px;
+                height: 18px;
+            }
+
+            .btn {
+                float: right;
+                margin: 11px 11px 0 0;
+                color: white;
+                font-weight: 100 !important;
+                font-size: 14px;
+                transition: 0.5s ease-in-out;
+                cursor: pointer;
+
+            }
+
+            &:hover {
+                background-color: #232D3F;
+                border: solid 1px #61677A;
+                cursor: pointer;
+            }
+
+            &:active {
+                background: $button-active-blue;
+            }
+        }
+
+        .user {
+            font-family: $font;
+            color: white;
+            padding: 10px;
+            width: 150px;
+            text-align: center;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            cursor: pointer;
+
+            border-radius: 6px;
+            background-color: $secondary;
+            border-color: $main-black;
+
+        }
+    }
+
+    .toggle {
+        display: none;
+
+        button {
+            background-color: $secondary;
+            font-family: $font;
+            border: none;
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+
+
+
+        }
+
+        @media screen and (max-width: 600px) {
+            display: block;
+            position: fixed;
+            right: 10px;
+            top: 30px;
+        }
+    }
+
+}

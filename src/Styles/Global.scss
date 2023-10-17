@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap');
+
+$white: #fff;
+$google-blue: white;
+$button-active-blue: #1669F2;
+$main-black : rgb(13, 17, 23);
+$font : 'Tilt Neon',
+sans-serif;
+$secondary : rgb(101, 76, 244);
+$hover : #232D3F;
+$hoverBorder : #61677A;
+
+body {
+    background-color: $main-black;
+
+    &::-webkit-scrollbar {
+        width: 2px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: $secondary;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: $hover;
+
+    }
+
+}

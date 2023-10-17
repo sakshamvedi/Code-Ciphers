@@ -1,0 +1,95 @@
+@import url("./Global.scss");
+$white: #fff;
+$google-blue: white;
+$button-active-blue: #1669F2;
+$main-black : rgb(13, 17, 23);
+$font : 'Tilt Neon',
+sans-serif;
+$secondary : rgb(101, 76, 244);
+$hover : #232D3F;
+$hoverBorder : #61677A;
+
+.parent {
+    background-color: $main-black;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+
+
+    .part1 {
+        width: 50%;
+        font-size: 40px;
+        font-family: $font;
+        font-weight: 700;
+        left: 20px;
+        padding-left: 20px;
+        color: white;
+
+        @media screen and (max-width: 600px) {
+            top: 20%;
+            position: absolute;
+            width: 90%;
+            font-size: 24px;
+            font-weight: 200;
+            padding: 20px;
+
+        }
+
+        span {
+            color: $secondary;
+        }
+
+        .btn {
+
+
+            margin-top: 20px;
+
+
+            button {
+                border: solid 1px $secondary;
+                background-color: transparent;
+                color: white;
+                font-family: $font;
+                padding: 10px;
+                width: 100px;
+                border-radius: 6px;
+                cursor: pointer;
+                font-size: 17px;
+                transform: 0.5s ease;
+
+                &:hover {
+                    background: $hover;
+                    border: solid 1px $hoverBorder;
+
+                }
+
+
+            }
+
+
+        }
+    }
+
+    .part2 {
+        img {
+            position: absolute;
+            bottom: 0;
+            right: 20px;
+            height: 400px;
+
+            //add a media query here      
+            @media screen and (max-width: 600px) {
+                left: 0;
+                bottom: 0;
+                height: 60%;
+
+
+
+            }
+
+        }
+    }
+}
